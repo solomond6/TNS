@@ -1,0 +1,430 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Employer Service Portal">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewBag.Title - CNS Portal</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="shortcut icon" href="../img/favicon.ico" />
+</head>
+<body class="m-page--fluid m-header--fixed-mobile m-aside-left--enabled m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default">
+    <div class="m-grid m-grid--hor m-grid--root m-page">
+        <header class="m-grid__item		m-header " data-minimize="minimize" data-minimize-offset="200" data-minimize-mobile-offset="200">
+            <div class="m-header__top">
+                <div class="m-container m-container--responsive m-container--xxl m-container--full-height m-page__container">
+                    <div class="m-stack m-stack--ver m-stack--desktop">
+                        <!-- begin::Brand -->
+                        <div class="m-stack__item m-brand">
+                            <div class="m-stack m-stack--ver m-stack--general m-stack--inline">
+                                <div class="m-stack__item m-stack__item--middle m-brand__logo">
+                                    <a href="index.html" class="m-brand__logo-wrapper">
+                                        <img alt="" src="~/img/logo.png">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end::Brand -->
+                        <!-- begin::Topbar -->
+                        <div class="m-stack__item m-stack__item--fluid m-header-head" id="m_header_nav">
+                            <div id="m_header_topbar" class="m-topbar  m-stack m-stack--ver m-stack--general">
+                                <div class="m-stack__item m-topbar__nav-wrapper">
+                                    <ul class="m-topbar__nav m-nav m-nav--inline">
+                                        <li class="m-nav__item m-topbar__notifications m-topbar__notifications--img m-dropdown m-dropdown--large m-dropdown--header-bg-fill m-dropdown--arrow m-dropdown--align-center 	m-dropdown--mobile-full-width" data-dropdown-toggle="click" data-dropdown-persistent="true">
+                                            <a href="#" class="m-nav__link m-dropdown__toggle" id="m_topbar_notification_icon">
+                                                <span class="m-nav__link-badge m-badge m-badge--dot m-badge--dot-small m-badge--danger m-animate-blink"></span>
+                                                <span class="m-nav__link-icon m-animate-shake">
+                                                    <span class="m-nav__link-icon-wrapper">
+                                                        <i class="flaticon-music-2"></i>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                            <div class="m-dropdown__wrapper">
+                                                <span class="m-dropdown__arrow m-dropdown__arrow--center"></span>
+                                                <div class="m-dropdown__inner">
+                                                    <div class="m-dropdown__header m--align-center" style="background: url(../img/misc/notification_bg.jpg); background-size: cover;">
+                                                        <span class="m-dropdown__header-title">
+                                                            9 New
+                                                        </span>
+                                                        <span class="m-dropdown__header-subtitle">
+                                                            User Notifications
+                                                        </span>
+                                                    </div>
+                                                    <div class="m-dropdown__body">
+                                                        <div class="m-dropdown__content">
+                                                            <ul class="nav nav-tabs m-tabs m-tabs-line m-tabs-line--brand" role="tablist">
+                                                                <li class="nav-item m-tabs__item">
+                                                                    <a class="nav-link m-tabs__link active" data-toggle="tab" href="#topbar_notifications_notifications" role="tab">
+                                                                        Alerts
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item m-tabs__item">
+                                                                    <a class="nav-link m-tabs__link" data-toggle="tab" href="#topbar_notifications_events" role="tab">
+                                                                        Events
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item m-tabs__item">
+                                                                    <a class="nav-link m-tabs__link" data-toggle="tab" href="#topbar_notifications_logs" role="tab">
+                                                                        Logs
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                            <div class="tab-content">
+                                                                <div class="tab-pane active" id="topbar_notifications_notifications" role="tabpanel">
+                                                                    <div class="m-scrollable mCustomScrollbar _mCS_1 mCS-autoHide mCS_no_scrollbar" data-scrollable="true" data-max-height="250" data-mobile-max-height="200" style="max-height: 250px; height: 250px; position: relative; overflow: visible;">
+                                                                        <div id="mCSB_1" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" style="max-height: 250px;" tabindex="0">
+                                                                            <div id="mCSB_1_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
+                                                                                <div class="m-list-timeline m-list-timeline--skin-light">
+                                                                                    <div class="m-list-timeline__items">
+                                                                                        <div class="m-list-timeline__item">
+                                                                                            <span class="m-list-timeline__badge -m-list-timeline__badge--state-success"></span>
+                                                                                            <span class="m-list-timeline__text">
+                                                                                                12 new users registered
+                                                                                            </span>
+                                                                                            <span class="m-list-timeline__time">
+                                                                                                Just now
+                                                                                            </span>
+                                                                                        </div>
+                                                                                        <div class="m-list-timeline__item">
+                                                                                            <span class="m-list-timeline__badge"></span>
+                                                                                            <span class="m-list-timeline__text">
+                                                                                                System shutdown
+                                                                                                <span class="m-badge m-badge--success m-badge--wide">
+                                                                                                    pending
+                                                                                                </span>
+                                                                                            </span>
+                                                                                            <span class="m-list-timeline__time">
+                                                                                                14 mins
+                                                                                            </span>
+                                                                                        </div>
+                                                                                        <div class="m-list-timeline__item">
+                                                                                            <span class="m-list-timeline__badge"></span>
+                                                                                            <span class="m-list-timeline__text">
+                                                                                                New invoice received
+                                                                                            </span>
+                                                                                            <span class="m-list-timeline__time">
+                                                                                                20 mins
+                                                                                            </span>
+                                                                                        </div>
+                                                                                        <div class="m-list-timeline__item">
+                                                                                            <span class="m-list-timeline__badge"></span>
+                                                                                            <span class="m-list-timeline__text">
+                                                                                                DB overloaded 80%
+                                                                                                <span class="m-badge m-badge--info m-badge--wide">
+                                                                                                    settled
+                                                                                                </span>
+                                                                                            </span>
+                                                                                            <span class="m-list-timeline__time">
+                                                                                                1 hr
+                                                                                            </span>
+                                                                                        </div>
+                                                                                        <div class="m-list-timeline__item">
+                                                                                            <span class="m-list-timeline__badge"></span>
+                                                                                            <span class="m-list-timeline__text">
+                                                                                                System error -
+                                                                                                <a href="#" class="m-link">
+                                                                                                    Check
+                                                                                                </a>
+                                                                                            </span>
+                                                                                            <span class="m-list-timeline__time">
+                                                                                                2 hrs
+                                                                                            </span>
+                                                                                        </div>
+                                                                                        <div class="m-list-timeline__item m-list-timeline__item--read">
+                                                                                            <span class="m-list-timeline__badge"></span>
+                                                                                            <span href="" class="m-list-timeline__text">
+                                                                                                New order received
+                                                                                                <span class="m-badge m-badge--danger m-badge--wide">
+                                                                                                    urgent
+                                                                                                </span>
+                                                                                            </span>
+                                                                                            <span class="m-list-timeline__time">
+                                                                                                7 hrs
+                                                                                            </span>
+                                                                                        </div>
+                                                                                        <div class="m-list-timeline__item m-list-timeline__item--read">
+                                                                                            <span class="m-list-timeline__badge"></span>
+                                                                                            <span class="m-list-timeline__text">
+                                                                                                Production server down
+                                                                                            </span>
+                                                                                            <span class="m-list-timeline__time">
+                                                                                                3 hrs
+                                                                                            </span>
+                                                                                        </div>
+                                                                                        <div class="m-list-timeline__item">
+                                                                                            <span class="m-list-timeline__badge"></span>
+                                                                                            <span class="m-list-timeline__text">
+                                                                                                Production server up
+                                                                                            </span>
+                                                                                            <span class="m-list-timeline__time">
+                                                                                                5 hrs
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical" style="display: none;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; top: 0px;"><div class="mCSB_dragger_bar" style="line-height: 50px;"></div></div><div class="mCSB_draggerRail"></div></div></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane" id="topbar_notifications_events" role="tabpanel">
+                                                                    <div class="m-scrollable" m-scrollabledata-scrollable="true" data-max-height="250" data-mobile-max-height="200">
+                                                                        <div class="m-list-timeline m-list-timeline--skin-light">
+                                                                            <div class="m-list-timeline__items">
+                                                                                <div class="m-list-timeline__item">
+                                                                                    <span class="m-list-timeline__badge m-list-timeline__badge--state1-success"></span>
+                                                                                    <a href="" class="m-list-timeline__text">
+                                                                                        New order received
+                                                                                    </a>
+                                                                                    <span class="m-list-timeline__time">
+                                                                                        Just now
+                                                                                    </span>
+                                                                                </div>
+                                                                                <div class="m-list-timeline__item">
+                                                                                    <span class="m-list-timeline__badge m-list-timeline__badge--state1-danger"></span>
+                                                                                    <a href="" class="m-list-timeline__text">
+                                                                                        New invoice received
+                                                                                    </a>
+                                                                                    <span class="m-list-timeline__time">
+                                                                                        20 mins
+                                                                                    </span>
+                                                                                </div>
+                                                                                <div class="m-list-timeline__item">
+                                                                                    <span class="m-list-timeline__badge m-list-timeline__badge--state1-success"></span>
+                                                                                    <a href="" class="m-list-timeline__text">
+                                                                                        Production server up
+                                                                                    </a>
+                                                                                    <span class="m-list-timeline__time">
+                                                                                        5 hrs
+                                                                                    </span>
+                                                                                </div>
+                                                                                <div class="m-list-timeline__item">
+                                                                                    <span class="m-list-timeline__badge m-list-timeline__badge--state1-info"></span>
+                                                                                    <a href="" class="m-list-timeline__text">
+                                                                                        New order received
+                                                                                    </a>
+                                                                                    <span class="m-list-timeline__time">
+                                                                                        7 hrs
+                                                                                    </span>
+                                                                                </div>
+                                                                                <div class="m-list-timeline__item">
+                                                                                    <span class="m-list-timeline__badge m-list-timeline__badge--state1-info"></span>
+                                                                                    <a href="" class="m-list-timeline__text">
+                                                                                        System shutdown
+                                                                                    </a>
+                                                                                    <span class="m-list-timeline__time">
+                                                                                        11 mins
+                                                                                    </span>
+                                                                                </div>
+                                                                                <div class="m-list-timeline__item">
+                                                                                    <span class="m-list-timeline__badge m-list-timeline__badge--state1-info"></span>
+                                                                                    <a href="" class="m-list-timeline__text">
+                                                                                        Production server down
+                                                                                    </a>
+                                                                                    <span class="m-list-timeline__time">
+                                                                                        3 hrs
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane" id="topbar_notifications_logs" role="tabpanel">
+                                                                    <div class="m-stack m-stack--ver m-stack--general" style="min-height: 180px;">
+                                                                        <div class="m-stack__item m-stack__item--center m-stack__item--middle">
+                                                                            <span class="">
+                                                                                All caught up!
+                                                                                <br>
+                                                                                No new logs.
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="m-nav__item m-topbar__quick-actions m-topbar__quick-actions--img m-dropdown m-dropdown--large m-dropdown--header-bg-fill m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push m-dropdown--mobile-full-width m-dropdown--skin-light" data-dropdown-toggle="click">
+                                            <a href="#" class="m-nav__link m-dropdown__toggle">
+                                                <span class="m-nav__link-badge m-badge m-badge--dot m-badge--info m--hide"></span>
+                                                <span class="m-nav__link-icon">
+                                                    <span class="m-nav__link-icon-wrapper">
+                                                        <i class="flaticon-share"></i>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                            <div class="m-dropdown__wrapper">
+                                                <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
+                                                <div class="m-dropdown__inner">
+                                                    <div class="m-dropdown__header m--align-center" style="background: url(../img/misc/quick_actions_bg.jpg); background-size: cover;">
+                                                        <span class="m-dropdown__header-title">
+                                                            Quick Actions
+                                                        </span>
+                                                        <span class="m-dropdown__header-subtitle">
+                                                            Shortcuts
+                                                        </span>
+                                                    </div>
+                                                    <div class="m-dropdown__body m-dropdown__body--paddingless">
+                                                        <div class="m-dropdown__content">
+                                                            <div class="m-scrollable" data-scrollable="false" data-max-height="380" data-mobile-max-height="200">
+                                                                <div class="m-nav-grid m-nav-grid--skin-light">
+                                                                    <div class="m-nav-grid__row">
+                                                                        <a href="#" class="m-nav-grid__item">
+                                                                            <i class="m-nav-grid__icon flaticon-file"></i>
+                                                                            <span class="m-nav-grid__text">
+                                                                                Generate Report
+                                                                            </span>
+                                                                        </a>
+                                                                        <a href="#" class="m-nav-grid__item">
+                                                                            <i class="m-nav-grid__icon flaticon-time"></i>
+                                                                            <span class="m-nav-grid__text">
+                                                                                Add New Event
+                                                                            </span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="m-nav-grid__row">
+                                                                        <a href="#" class="m-nav-grid__item">
+                                                                            <i class="m-nav-grid__icon flaticon-folder"></i>
+                                                                            <span class="m-nav-grid__text">
+                                                                                Create New Task
+                                                                            </span>
+                                                                        </a>
+                                                                        <a href="#" class="m-nav-grid__item">
+                                                                            <i class="m-nav-grid__icon flaticon-clipboard"></i>
+                                                                            <span class="m-nav-grid__text">
+                                                                                Completed Tasks
+                                                                            </span>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="m-nav__item m-topbar__user-profile m-topbar__user-profile--img  m-dropdown m-dropdown--medium m-dropdown--arrow m-dropdown--header-bg-fill m-dropdown--align-right m-dropdown--mobile-full-width m-dropdown--skin-light" data-dropdown-toggle="click">
+                                            @{
+                                                if (User.Identity.IsAuthenticated)
+                                                {
+                                                    <a href="#" class="m-nav__link m-dropdown__toggle">
+                                                        <span class="m-topbar__welcome">
+                                                            Hello,&nbsp;
+                                                        </span>
+                                                        <span class="m-topbar__username">@(User.Identity.IsAuthenticated ? HttpContext.Current.User.Identity.Name : "Guest")</span>
+                                                    </a>
+                                                }
+                                                else
+                                                {
+                                                    <span>Kindly Login</span>
+                                                }
+                                            }
+                                            <div class="m-dropdown__wrapper">
+                                                <span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
+                                                <div class="m-dropdown__inner">
+                                                    <div class="m-dropdown__body">
+                                                        <div class="m-dropdown__content">
+                                                            <ul class="m-nav m-nav--skin-light">
+                                                                <li class="m-nav__item">
+                                                                    <a href="@Url.Action("Logout","Login")" class="btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">
+                                                                        Logout
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </i>
+                                        <li id="m_quick_sidebar_toggle" class="m-nav__item">
+                                            <a href="#" class="m-nav__link m-dropdown__toggle">
+                                                <span class="m-nav__link-icon m-nav__link-icon--aside-toggle">
+                                                    <span class="m-nav__link-icon-wrapper">
+                                                        <i class="flaticon-menu-button"></i>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end::Topbar -->
+                    </div>
+                </div>
+            </div>
+            <div class="m-header__bottom">
+                <div class="m-container m-container--responsive m-container--xxl m-container--full-height m-page__container">
+                    <div class="m-stack m-stack--ver m-stack--desktop">
+                        <!-- begin::Horizontal Menu -->
+                        <div class="m-stack__item m-stack__item--middle m-stack__item--fluid">
+                            <button class="m-aside-header-menu-mobile-close  m-aside-header-menu-mobile-close--skin-light " id="m_aside_header_menu_mobile_close_btn">
+                                <i class="la la-close"></i>
+                            </button>
+                            <div id="m_header_menu" class="m-header-menu m-aside-header-menu-mobile m-aside-header-menu-mobile--offcanvas  m-header-menu--skin-dark m-header-menu--submenu-skin-light m-aside-header-menu-mobile--skin-light m-aside-header-menu-mobile--submenu-skin-light ">
+                                <ul class="m-menu__nav  m-menu__nav--submenu-arrow">
+                                    <li class="m-menu__item  m-menu__item--active  m-menu__item--submenu m-menu__item--rel" data-menu-submenu-toggle="click" aria-haspopup="true">
+                                        <a href="@Url.Action("Index", "Campaign")" class="m-menu__link">
+                                            <span class="m-menu__item-here"></span>
+                                            <span class="m-menu__link-text">
+                                                Campaigns
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="m-menu__item  m-menu__item--active  m-menu__item--submenu m-menu__item--rel" data-menu-submenu-toggle="click" aria-haspopup="true">
+                                        <a href="@Url.Action("Index", "Templates")" class="m-menu__link">
+                                            <span class="m-menu__item-here"></span>
+                                            <span class="m-menu__link-text">
+                                                Templates
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="m-menu__item  m-menu__item--active  m-menu__item--submenu m-menu__item--rel" data-menu-submenu-toggle="click" aria-haspopup="true">
+                                        <a href="@Url.Action("Index", "Lists")" class="m-menu__link">
+                                            <span class="m-menu__item-here"></span>
+                                            <span class="m-menu__link-text">
+                                                Lists
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="m-menu__item  m-menu__item--active  m-menu__item--submenu m-menu__item--rel" data-menu-submenu-toggle="click" aria-haspopup="true">
+                                        <a href="@Url.Action("Index", "Reports")" class="m-menu__link">
+                                            <span class="m-menu__item-here"></span>
+                                            <span class="m-menu__link-text">
+                                                Reports
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="m-grid__item m-grid__item--fluid  m-grid m-grid--ver-desktop m-grid--desktop 	m-container m-container--responsive m-container--xxl m-page__container m-body">
+            @RenderBody()
+        </div>
+        <footer class="m-grid__item m-footer ">
+            <div class="m-container m-container--responsive m-container--xxl m-container--full-height m-page__container">
+                <div class="m-footer__wrapper">
+                    <div class="m-stack m-stack--flex-tablet-and-mobile m-stack--ver m-stack--desktop">
+                        <div class="m-stack__item m-stack__item--left m-stack__item--middle m-stack__item--last">
+                            <span class="m-footer__copyright">
+                                &copy; @DateTime.Now.Year - Stanbic IBTC
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="m-scroll-top m-scroll-top--skin-top" data-toggle="m-scroll-top" data-scroll-offset="500" data-scroll-speed="300">
+            <i class="la la-arrow-up"></i>
+        </div>
+    </div>
+</body>
+</html>

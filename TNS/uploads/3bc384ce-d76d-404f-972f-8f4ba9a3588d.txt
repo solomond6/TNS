@@ -1,0 +1,542 @@
+[
+  {
+    "Components": {
+      "ID": 119,
+      "Name": "Fire",
+      "Type": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "Company": {
+      "ID": 6,
+      "Name": "Leadway Insurance",
+      "Op_State": null,
+      "Icon": null,
+      "InsuranceType": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "InsuranceType": {
+      "ID": 3,
+      "Name": "Motor"
+    },
+    "ID": 119,
+    "Percentage": 5
+  },
+  {
+    "Components": {
+      "ID": 120,
+      "Name": "Flood",
+      "Type": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "Company": {
+      "ID": 6,
+      "Name": "Leadway Insurance",
+      "Op_State": null,
+      "Icon": null,
+      "InsuranceType": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "InsuranceType": {
+      "ID": 3,
+      "Name": "Motor"
+    },
+    "ID": 120,
+    "Percentage": 2
+  },
+  {
+    "Components": {
+      "ID": 121,
+      "Name": "Theft",
+      "Type": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "Company": {
+      "ID": 6,
+      "Name": "Leadway Insurance",
+      "Op_State": null,
+      "Icon": null,
+      "InsuranceType": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "InsuranceType": {
+      "ID": 3,
+      "Name": "Motor"
+    },
+    "ID": 121,
+    "Percentage": 4
+  },
+  {
+    "Components": {
+      "ID": 127,
+      "Name": "Accident",
+      "Type": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "Company": {
+      "ID": 6,
+      "Name": "Leadway Insurance",
+      "Op_State": null,
+      "Icon": null,
+      "InsuranceType": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "InsuranceType": {
+      "ID": 2,
+      "Name": "Industrial"
+    },
+    "ID": 127,
+    "Percentage": 30
+  },
+  {
+    "Components": {
+      "ID": 113,
+      "Name": "Fire",
+      "Type": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "Company": {
+      "ID": 5,
+      "Name": "Law Union",
+      "Op_State": null,
+      "Icon": null,
+      "InsuranceType": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "InsuranceType": {
+      "ID": 3,
+      "Name": "Motor"
+    },
+    "ID": 113,
+    "Percentage": 5
+  },
+  {
+    "Components": {
+      "ID": 114,
+      "Name": "Flood",
+      "Type": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "Company": {
+      "ID": 5,
+      "Name": "Law Union",
+      "Op_State": null,
+      "Icon": null,
+      "InsuranceType": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "InsuranceType": {
+      "ID": 3,
+      "Name": "Motor"
+    },
+    "ID": 114,
+    "Percentage": 2
+  },
+  {
+    "Components": {
+      "ID": 115,
+      "Name": "Theft",
+      "Type": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "Company": {
+      "ID": 5,
+      "Name": "Law Union",
+      "Op_State": null,
+      "Icon": null,
+      "InsuranceType": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "InsuranceType": {
+      "ID": 3,
+      "Name": "Motor"
+    },
+    "ID": 115,
+    "Percentage": 5
+  },
+  {
+    "Components": {
+      "ID": 126,
+      "Name": "Accident",
+      "Type": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "Company": {
+      "ID": 5,
+      "Name": "Law Union",
+      "Op_State": null,
+      "Icon": null,
+      "InsuranceType": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "InsuranceType": {
+      "ID": 2,
+      "Name": "Industrial"
+    },
+    "ID": 126,
+    "Percentage": 10
+  },
+  {
+    "Components": {
+      "ID": 110,
+      "Name": "Fire",
+      "Type": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "Company": {
+      "ID": 4,
+      "Name": "Industrial General Insurance",
+      "Op_State": null,
+      "Icon": null,
+      "InsuranceType": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "InsuranceType": {
+      "ID": 3,
+      "Name": "Motor"
+    },
+    "ID": 110,
+    "Percentage": 5
+  },
+  {
+    "Components": {
+      "ID": 111,
+      "Name": "Flood",
+      "Type": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "Company": {
+      "ID": 4,
+      "Name": "Industrial General Insurance",
+      "Op_State": null,
+      "Icon": null,
+      "InsuranceType": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "InsuranceType": {
+      "ID": 3,
+      "Name": "Motor"
+    },
+    "ID": 111,
+    "Percentage": 5
+  },
+  {
+    "Components": {
+      "ID": 112,
+      "Name": "Theft",
+      "Type": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "Company": {
+      "ID": 4,
+      "Name": "Industrial General Insurance",
+      "Op_State": null,
+      "Icon": null,
+      "InsuranceType": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "InsuranceType": {
+      "ID": 3,
+      "Name": "Motor"
+    },
+    "ID": 112,
+    "Percentage": 10
+  },
+  {
+    "Components": {
+      "ID": 125,
+      "Name": "Accident",
+      "Type": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "Company": {
+      "ID": 4,
+      "Name": "Industrial General Insurance",
+      "Op_State": null,
+      "Icon": null,
+      "InsuranceType": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "InsuranceType": {
+      "ID": 2,
+      "Name": "Industrial"
+    },
+    "ID": 125,
+    "Percentage": 10
+  },
+  {
+    "Components": {
+      "ID": 107,
+      "Name": "Fire",
+      "Type": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "Company": {
+      "ID": 1,
+      "Name": "Cornerstone",
+      "Op_State": null,
+      "Icon": null,
+      "InsuranceType": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "InsuranceType": {
+      "ID": 3,
+      "Name": "Motor"
+    },
+    "ID": 107,
+    "Percentage": 5
+  },
+  {
+    "Components": {
+      "ID": 108,
+      "Name": "Flood",
+      "Type": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "Company": {
+      "ID": 1,
+      "Name": "Cornerstone",
+      "Op_State": null,
+      "Icon": null,
+      "InsuranceType": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "InsuranceType": {
+      "ID": 3,
+      "Name": "Motor"
+    },
+    "ID": 108,
+    "Percentage": 10
+  },
+  {
+    "Components": {
+      "ID": 109,
+      "Name": "Theft",
+      "Type": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "Company": {
+      "ID": 1,
+      "Name": "Cornerstone",
+      "Op_State": null,
+      "Icon": null,
+      "InsuranceType": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "InsuranceType": {
+      "ID": 3,
+      "Name": "Motor"
+    },
+    "ID": 109,
+    "Percentage": 10
+  },
+  {
+    "Components": {
+      "ID": 116,
+      "Name": "Fire",
+      "Type": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "Company": {
+      "ID": 7,
+      "Name": "Axadmansard Insurance",
+      "Op_State": null,
+      "Icon": null,
+      "InsuranceType": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "InsuranceType": {
+      "ID": 3,
+      "Name": "Motor"
+    },
+    "ID": 116,
+    "Percentage": 5
+  },
+  {
+    "Components": {
+      "ID": 117,
+      "Name": "Flood",
+      "Type": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "Company": {
+      "ID": 7,
+      "Name": "Axadmansard Insurance",
+      "Op_State": null,
+      "Icon": null,
+      "InsuranceType": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "InsuranceType": {
+      "ID": 3,
+      "Name": "Motor"
+    },
+    "ID": 117,
+    "Percentage": 2
+  },
+  {
+    "Components": {
+      "ID": 118,
+      "Name": "Theft",
+      "Type": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "Company": {
+      "ID": 7,
+      "Name": "Axadmansard Insurance",
+      "Op_State": null,
+      "Icon": null,
+      "InsuranceType": null,
+      "CreatedDate": null,
+      "UpdatedDate": null,
+      "CreatedBy": null,
+      "EditedBy": null,
+      "Active": false
+    },
+    "InsuranceType": {
+      "ID": 3,
+      "Name": "Motor"
+    },
+    "ID": 118,
+    "Percentage": 5
+  }
+]

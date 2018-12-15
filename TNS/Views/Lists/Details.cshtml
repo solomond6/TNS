@@ -1,0 +1,196 @@
+﻿
+<div class="m-grid__item m-grid__item--fluid  m-grid m-grid--ver-desktop m-grid--desktop">
+    <!-- BEGIN: Left Aside -->
+    <button class="m-aside-left-close m-aside-left-close--skin-light" id="m_aside_left_close_btn">
+        <i class="la la-close"></i>
+    </button>
+    <!-- END: Left Aside -->
+    <div class="m-grid__item m-grid__item--fluid m-wrapper">
+        <!-- BEGIN: Subheader -->
+        <div class="m-subheader ">
+            <div class="d-flex align-items-center">
+                <div class="mr-auto">
+                    <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+                        <li class="m-nav__item m-nav__item--home">
+                            <a href="#" class="m-nav__link m-nav__link--icon">
+                                <i class="m-nav__link-icon la la-home"></i>
+                            </a>
+                        </li>
+                        <li class="m-nav__separator">
+                            -
+                        </li>
+                        <li class="m-nav__item">
+                            <a href="" class="m-nav__link">
+                                <span class="m-nav__link-text">
+                                    Actions
+                                </span>
+                            </a>
+                        </li>
+                        <li class="m-nav__separator">
+                            -
+                        </li>
+                        <li class="m-nav__item">
+                            <a href="" class="m-nav__link">
+                                <span class="m-nav__link-text">
+                                    List
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END: Subheader -->
+        <div class="m-content">
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption" style="display: inline-block;">
+                    <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text"></h3>
+                    </div>
+                </div>
+                <div class="m-portlet__head-tools pull-right" style="display: inline-block;">
+                    <a class="btn btn-primary" href="@Url.Action("Create","Lists")">
+                        <span>
+                            <i class="la la-plus"></i>
+                            <span>New List</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <hr />
+            @if (TempData["MessageError"] != null)
+            {
+                <alert class="alert alert-danger">@TempData["MessageError"]</alert>
+            }
+            @if (TempData["MessageSuccess"] != null)
+            {
+                <alert class="alert alert-success">@TempData["MessageSuccess"]</alert>
+            }
+            <div class="m_datatable m-datatable m-datatable--default m-datatable--loaded">
+                <table id="employer-data-table" class="datatable__table table table-striped" width="100%">
+                   <thead></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLabel"></h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="contentPreview"></div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+
+<script>
+
+    var ListId = "@ViewBag.ListId";
+
+    function format ( d ) {
+        return '<table class="table table-sm" cellpadding="5" cellspacing="0" border="0" style="padding-left:150px;" width="100%">'+
+            '<tr>'+
+                '<td>'+d.H7+'</td>'+
+                '<td>'+d.H8+'</td>'+
+                '<td>'+d.H9+'</td>'+
+                '<td>'+d.H10+'</td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td>'+d.H11+'</td>'+
+                '<td>'+d.H12+'</td>'+
+                '<td>'+d.H13+'</td>'+
+                '<td>'+d.H14+'</td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td>'+d.H16+'</td>'+
+                '<td>'+d.H17+'</td>'+
+                '<td>'+d.H18+'</td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td>'+d.H19+'</td>'+
+                '<td>'+d.H20+'</td>'+
+            '</tr>'+
+        '</table>';
+    }
+
+    var table = $('#employer-data-table').DataTable( {
+        "processing": true,
+        "ajax": {
+            "type": 'GET',
+            "url": "@Url.Action("GetListDetails", "Lists")",
+            "data": {ListId: ListId}
+        },
+        "columns": [
+            {
+                "class": "details-control",
+                "orderable": false,
+                "data": null,
+                "defaultContent": ""
+            },
+            { "data": "H1" },
+            { "data": "H2" },
+            { "data": "H3" },
+            { "data": "H4" },
+            { "data": "H5" },
+            { "data": "H6" }
+        ]
+    });
+
+    var detailRows = [];
+
+    $('#employer-data-table tbody').on( 'click', 'tr td.details-control', function () {
+        var tr = $(this).closest('tr');
+        var row = table.row( tr );
+        var idx = $.inArray( tr.attr('id'), detailRows );
+
+        if ( row.child.isShown() ) {
+            tr.removeClass( 'details' );
+            row.child.hide();
+
+            // Remove from the 'open' array
+            detailRows.splice( idx, 1 );
+        }
+        else {
+            tr.addClass( 'details' );
+            row.child( format( row.data() ) ).show();
+
+            // Add to the 'open' array
+            if ( idx === -1 ) {
+                detailRows.push( tr.attr('id') );
+            }
+        }
+    });
+
+    $(document).on('click', '#preview', function(){
+        var templateId = $(this).data('id');
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("GetTemplatePreview", "Templates")",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: {'templateid': templateId },
+            success: function (data) {
+                $.each(data, function (index, item) {
+                    requestData = item;
+                    jQuery.grep(item, function(template, i) {
+                         $(".modal-title").html(template.Title)
+                         $(".contentPreview").html(template.Contents)
+                    });
+                });
+            }
+        });
+    });
+
+    $(".m-portlet__head-text").html(localStorage.ListName +' List')
+
+</script>

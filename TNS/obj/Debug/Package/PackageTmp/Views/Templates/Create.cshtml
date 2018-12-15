@@ -1,0 +1,110 @@
+﻿
+<div class="m-grid__item m-grid__item--fluid  m-grid m-grid--ver-desktop m-grid--desktop">
+    <!-- BEGIN: Left Aside -->
+    <button class="m-aside-left-close m-aside-left-close--skin-light" id="m_aside_left_close_btn">
+        <i class="la la-close"></i>
+    </button>
+    <!-- END: Left Aside -->
+    <div class="m-grid__item m-grid__item--fluid m-wrapper">
+        <!-- BEGIN: Subheader -->
+        <div class="m-subheader ">
+            <div class="d-flex align-items-center">
+                <div class="mr-auto">
+                    <h3 class="m-subheader__title m-subheader__title--separator">
+                        Templates
+                    </h3>
+                    <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+                        <li class="m-nav__item m-nav__item--home">
+                            <a href="#" class="m-nav__link m-nav__link--icon">
+                                <i class="m-nav__link-icon la la-home"></i>
+                            </a>
+                        </li>
+                        <li class="m-nav__separator">
+                            -
+                        </li>
+                        <li class="m-nav__item">
+                            <a href="" class="m-nav__link">
+                                <span class="m-nav__link-text">
+                                    Actions
+                                </span>
+                            </a>
+                        </li>
+                        <li class="m-nav__separator">
+                            -
+                        </li>
+                        <li class="m-nav__item">
+                            <a href="" class="m-nav__link">
+                                <span class="m-nav__link-text">
+                                    Create Templates
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END: Subheader -->
+        <div class="m-content">
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption" style="display: inline-block;">
+                    <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text">
+                            Create Template
+                        </h3>
+                    </div>
+                </div>
+                <div class="m-portlet__head-tools pull-right" style="display: inline-block;">
+                    <a class="btn btn-primary" href="@Url.Action("Index","Templates")">
+                        <span>
+                            <i class="la la-home"></i>
+                            <span>Template List</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <hr />
+            <form class="m-form" method="post" action="@Url.Action("SaveTemplate", "Templates")" enctype="multipart/form-data">
+                <div class="form-group m-form__group">
+                    <label for="exampleInputEmail1"><h4>Title</h4></label>
+                    <input type="text" name="Title" class="form-control m-input" id="title" placeholder="Template Title">
+                </div>
+                <hr />
+                <div class="form-group m-form__group">
+                    <textarea name="Contents" id="summernote" class="summernote" rows="0"></textarea>
+                </div>
+                <hr />
+                <div class="form-group m-form__group">
+                    <button type="submit" class="btn btn-success">Save Template</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+<script src="~/Scripts/tinymce/jquery.tinymce.min.js"></script>
+<script src="~/Scripts/tinymce/tinymce.min.js"></script>
+<script>
+    tinymce.init({
+        selector: 'textarea',
+        theme: 'modern',
+        plugins: 'print preview fullpage paste searchreplace autoresize autolink directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount spellchecker autosave save searchreplace imagetools image code media link contextmenu colorpicker textpattern visualblocks help',
+        toolbar1: 'bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat | undo redo | image code',
+        toolbar2: 'formatselect | mybutton',
+        image_advtab: true,
+        autoresize_min_height: 350,
+        autoresize_overflow_padding: 20,
+        autoresize_bottom_margin: 20,
+        templates: [
+            { title: 'Test template 1', content: 'Test 1' },
+            { title: 'Test template 2', content: 'Test 2' }
+        ],
+        relative_urls : false,
+        remove_script_host : false,
+        convert_urls : true,
+        images_upload_url: '@Url.Action("TinyMceUpload", "TinyMce")',
+        content_css: [
+        ]
+    });
+</script>

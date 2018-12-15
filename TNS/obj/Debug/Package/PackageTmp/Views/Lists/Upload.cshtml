@@ -1,0 +1,202 @@
+﻿
+@model System.Data.DataTable
+@using System.Data;
+
+<div class="m-grid__item m-grid__item--fluid  m-grid m-grid--ver-desktop m-grid--desktop">
+    <!-- BEGIN: Left Aside -->
+    <button class="m-aside-left-close m-aside-left-close--skin-light" id="m_aside_left_close_btn">
+        <i class="la la-close"></i>
+    </button>
+    <div id="m_aside_left" class="m-grid__item m-aside-left ">
+        <div id="m_ver_menu" class="m-aside-menu  m-aside-menu--skin-light m-aside-menu--submenu-skin-light " data-menu-vertical="true" data-menu-scrollable="false" data-menu-dropdown-timeout="500">
+            <!--<form class="m-form">
+                <div class="m-form__group form-group">
+                    <h3>
+                        <label for="">
+                            Parameters
+                        </label>
+                    </h3>
+                    <div class="m-checkbox-list">
+                        <label class="m-checkbox">
+                            <input type="checkbox">
+                            Default
+                            <span></span>
+                        </label>
+                        <label class="m-checkbox">
+                            <input type="checkbox">
+                            Checked
+                            <span></span>
+                        </label>
+                        <label class="m-checkbox">
+                            <input type="checkbox">
+                            Checked
+                            <span></span>
+                        </label>
+                        <label class="m-checkbox">
+                            <input type="checkbox">
+                            Checked
+                            <span></span>
+                        </label>
+                        <label class="m-checkbox">
+                            <input type="checkbox">
+                            Checked
+                            <span></span>
+                        </label>
+                        <label class="m-checkbox">
+                            <input type="checkbox">
+                            Checked
+                            <span></span>
+                        </label>
+                        <label class="m-checkbox">
+                            <input type="checkbox">
+                            Checked
+                            <span></span>
+                        </label>
+                        <label class="m-checkbox">
+                            <input type="checkbox">
+                            Checked
+                            <span></span>
+                        </label>
+                        <label class="m-checkbox">
+                            <input type="checkbox">
+                            Checked
+                            <span></span>
+                        </label>
+                        <label class="m-checkbox">
+                            <input type="checkbox">
+                            Checked
+                            <span></span>
+                        </label>
+
+                    </div>
+                </div>
+            </form>-->
+        </div>
+    </div>
+    <!-- END: Left Aside -->
+    <div class="m-grid__item m-grid__item--fluid m-wrapper">
+        <!-- BEGIN: Subheader -->
+        <div class="m-subheader ">
+            <div class="d-flex align-items-center">
+                <div class="mr-auto">
+                    <h3 class="m-subheader__title m-subheader__title--separator">
+                        List
+                    </h3>
+                    <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+                        <li class="m-nav__item m-nav__item--home">
+                            <a href="#" class="m-nav__link m-nav__link--icon">
+                                <i class="m-nav__link-icon la la-home"></i>
+                            </a>
+                        </li>
+                        <li class="m-nav__separator">
+                            -
+                        </li>
+                        <li class="m-nav__item">
+                            <a href="" class="m-nav__link">
+                                <span class="m-nav__link-text">
+                                    Actions
+                                </span>
+                            </a>
+                        </li>
+                        <li class="m-nav__separator">
+                            -
+                        </li>
+                        <li class="m-nav__item">
+                            <a href="" class="m-nav__link">
+                                <span class="m-nav__link-text">
+                                    Upload Contacts
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END: Subheader -->
+        <div class="m-content">
+            <div class="m-portlet">
+                <div class="m-portlet__head">
+                    <div class="m-portlet__head-caption">
+                        <div class="m-portlet__head-title">
+                            <span class="m-portlet__head-icon m--hide">
+                                <i class="la la-gear"></i>
+                            </span>
+                            <h3 class="m-portlet__head-text">
+                                Upload Contacts
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <!--begin::Form-->
+                <form class="m-form" method="post" action="@Url.Action("Import", "Lists")" enctype="multipart/form-data">
+                    <div class="m-portlet__body">
+                        <h3>List Headers</h3>
+                        <!--<div class="headers"></div>
+                        <small style="color:#900;">Arrange your list according to this headers</small>-->
+                        <hr/>
+                        <div class="m-form__section m-form__section--first">
+                            <div class="form-group m-form__group row">
+                                <label class="col-lg-2 col-form-label">List Name:</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control m-input" name="Listname" placeholder="">
+                                    <span class="m-form__help">Please enter the List name</span>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="form-group m-form__group row">
+                                <label class="col-lg-2 col-form-label">Choose A File:</label>
+                                <div class="col-lg-10">
+                                    <input type="file" class="form-control m-input" name="upload" placeholder="">
+                                    <span class="m-form__help">Please enter your full name</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-portlet__foot m-portlet__foot--fit">
+                        <div class="m-form__actions m-form__actions">
+                            <div class="row">
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-10">
+                                    <button type="submit" class="btn btn-success btnInport">Submit</button>
+                                    <button type="reset" class="btn btn-secondary">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!--end::Form-->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="loader-wrapper" id="loader-3">
+    <div id="loader"></div>
+    <div id="loader"></div>
+    <div id="loader"></div>
+    <div id="loader"></div>
+    <div id="loader"></div>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+<script>
+    $('.loader-wrapper').hide();
+
+    $(document).on('click', '.btnInport', function(){
+        $('.loader-wrapper').show();
+    })
+    $.ajax({
+        type: "GET",
+        url: "@Url.Action("GetListHeaders", "Lists")",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        data: {'id': "1" },
+        success: function (data) {
+            $.each(data, function (index, item) {
+                jQuery.grep(item, function(headers, i) {
+                    $(".headers").html(headers.H1 +' | '+headers.H2 +' | '+headers.H3 +' | '+headers.H4 +' | '+headers.H5 +' | '+headers.H6 +' | '+headers.H7 +' | '+headers.H8 +' | '+headers.H9 +' | '+headers.H10 +' |'+headers.H11 +' | '+headers.H12 +' | '+headers.H13 +' | '+headers.H14 +' | '+headers.H15 +' | '+headers.H16 +' | '+headers.H17 +' | '+headers.H18 +' | '+headers.H19 +' | '+headers.H20);
+                });
+            });
+        }
+    });
+</script>

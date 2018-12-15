@@ -1,0 +1,173 @@
+﻿
+<div class="m-grid__item m-grid__item--fluid  m-grid m-grid--ver-desktop m-grid--desktop">
+    <!-- BEGIN: Left Aside -->
+    <button class="m-aside-left-close m-aside-left-close--skin-light" id="m_aside_left_close_btn">
+        <i class="la la-close"></i>
+    </button>
+    <div id="m_aside_left" class="m-grid__item m-aside-left ">
+        <div id="m_ver_menu" class="m-aside-menu  m-aside-menu--skin-light m-aside-menu--submenu-skin-light " data-menu-vertical="true" data-menu-scrollable="false" data-menu-dropdown-timeout="500">
+            <form class="m-form">
+                <div class="m-form__group form-group">
+                    <h3>
+                        <label for="">
+                            Parameters
+                        </label>
+                    </h3>
+                    <div class="m-checkbox-list">
+                        <label class="m-checkbox">
+                            <input type="checkbox">
+                            Default
+                            <span></span>
+                        </label>
+                        <label class="m-checkbox">
+                            <input type="checkbox">
+                            Checked
+                            <span></span>
+                        </label>
+                        <label class="m-checkbox">
+                            <input type="checkbox">
+                            Checked
+                            <span></span>
+                        </label>
+                        <label class="m-checkbox">
+                            <input type="checkbox">
+                            Checked
+                            <span></span>
+                        </label>
+                        <label class="m-checkbox">
+                            <input type="checkbox">
+                            Checked
+                            <span></span>
+                        </label>
+                        <label class="m-checkbox">
+                            <input type="checkbox">
+                            Checked
+                            <span></span>
+                        </label>
+                        <label class="m-checkbox">
+                            <input type="checkbox">
+                            Checked
+                            <span></span>
+                        </label>
+                        <label class="m-checkbox">
+                            <input type="checkbox">
+                            Checked
+                            <span></span>
+                        </label>
+                        <label class="m-checkbox">
+                            <input type="checkbox">
+                            Checked
+                            <span></span>
+                        </label>
+                        <label class="m-checkbox">
+                            <input type="checkbox">
+                            Checked
+                            <span></span>
+                        </label>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- END: Left Aside -->
+    <div class="m-grid__item m-grid__item--fluid m-wrapper">
+        <!-- BEGIN: Subheader -->
+        <div class="m-subheader ">
+            <div class="d-flex align-items-center">
+                <div class="mr-auto">
+                    <h3 class="m-subheader__title m-subheader__title--separator">
+                        Notifications
+                    </h3>
+                    <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+                        <li class="m-nav__item m-nav__item--home">
+                            <a href="#" class="m-nav__link m-nav__link--icon">
+                                <i class="m-nav__link-icon la la-home"></i>
+                            </a>
+                        </li>
+                        <li class="m-nav__separator">
+                            -
+                        </li>
+                        <li class="m-nav__item">
+                            <a href="" class="m-nav__link">
+                                <span class="m-nav__link-text">
+                                    Actions
+                                </span>
+                            </a>
+                        </li>
+                        <li class="m-nav__separator">
+                            -
+                        </li>
+                        <li class="m-nav__item">
+                            <a href="" class="m-nav__link">
+                                <span class="m-nav__link-text">
+                                    Notifications
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END: Subheader -->
+        <div class="m-content">
+            <form class="m-form" method="post" action="@Url.Action("SaveTemplate", "Home")" enctype="multipart/form-data">
+                <textarea name="contents" id="summernote" class="summernote"></textarea>
+                <hr/>
+                <button type="submit" class="btn btn-success">Save Template</button>
+            </form>
+            
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+<script type="text/javascript" src="~/Scripts/tinymce/jquery.tinymce.min.js"></script>
+<script type="text/javascript" src="~/Scripts/tinymce/tinymce.min.js"></script>
+
+<link href="~/Content/summernote.css" rel="stylesheet"/>
+<script type="text/javascript" src="~/Scripts/summernote.min.js"></script>
+<script>
+    tinymce.init({
+      selector: 'textarea',
+      theme: 'modern',
+      plugins: 'print preview fullpage paste searchreplace autoresize autolink directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount spellchecker autosave save searchreplace imagetools image code media link contextmenu colorpicker textpattern visualblocks help',
+      toolbar1: 'bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat | undo redo | image code',
+      toolbar2: 'formatselect | mybutton',
+      image_advtab: true,
+      autoresize_min_height: 350,
+      autoresize_overflow_padding: 20,
+      autoresize_bottom_margin: 20,
+      templates: [
+        { title: 'Test template 1', content: 'Test 1' },
+        { title: 'Test template 2', content: 'Test 2' }
+      ],
+      relative_urls : false,
+      remove_script_host : false,
+      convert_urls : true,
+      //image_prepend_url: "http://localhost:55043/",
+      images_upload_url: '@Url.Action("TinyMceUpload", "TinyMce")',
+      setup: function(editor) {
+        editor.addButton('mybutton', {
+          type: 'menubutton',
+          text: 'Manage Tags',
+          icon: true,
+          menu: [{
+            text: 'Menu item 1',
+            onclick: function() {
+              editor.insertContent('&nbsp;<strong>Menu item 1 text inserted here!</strong>&nbsp;');
+            }
+          }, {
+            text: 'Menu item 2',
+            onclick: function() {
+              editor.insertContent('&nbsp;<strong>Menu item 2 text inserted here!</strong>&nbsp;');
+            }
+          }]
+        });
+      },
+      content_css: [
+        '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+        '//www.tinymce.com/css/codepen.min.css'
+      ]
+     });
+</script>

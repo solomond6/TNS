@@ -1,0 +1,470 @@
+﻿<div class="m-grid__item m-grid__item--fluid m-wrapper">
+    <!-- BEGIN: Subheader -->
+    <div class="m-subheader ">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h3 class="m-subheader__title ">
+                    Campaigns
+                </h3>
+            </div>
+            <div style="padding:0px 10px;">
+                <span id="m_dashboard_daterangepicker">
+                    <a href="@Url.Action("SMSCreate", "Campaign")" class="btn btn-primary">
+                        <i class="la la-plus"></i> Create SMS Campaigns
+                    </a>
+                </span>
+            </div>
+            <div>
+                <span id="m_dashboard_daterangepicker">
+                    <a href="@Url.Action("Create", "Campaign")" class="btn btn-primary">
+                        <i class="la la-plus"></i> Create Email Campaigns
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="m-content">
+        @if (TempData["Msg"] != null)
+        {
+            <alert class="alert alert-success">@TempData["Msg"]</alert>
+        }
+        @if (TempData["Error"] != null)
+        {
+            <alert class="alert alert-danger">@TempData["Error"]</alert>
+        }
+        
+        <div class="m_datatable m-datatable m-datatable--default m-datatable--loaded table-responsive">
+            <table id="employer-data-table" class="datatable__table table table-striped" width="100%">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>ID</th>
+                        <th>Campaign Name</th>
+                        <th>Subject</th>
+                        <th>Date</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="m_modal_6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLongTitle"></h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form class="m_form1" id="m_form1">
+                <div class="modal-body">
+                    <div class="responseMsg"></div>
+                    <div class="form-group">
+                        <label class="form-control-label">
+                            * Search Param:
+                        </label>
+                        <select name="searchparam" class="form-control m-input btn-success" id="listID5" data-style="btn-primary">
+                            <option value="">
+                                Select Tag
+                            </option>
+                        </select>
+                        <span class="m-form__help paramsHelp" style="color:red"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">* Value:</label>
+                        <input type="text" name="testvalue" class="form-control m-input" id="testvalue" placeholder="" required>
+                        <input type="hidden" name="listId" class="form-control m-input" id="listId" placeholder="" required>
+                        <input type="hidden" name="campaignId" class="form-control m-input" id="campaignId" placeholder="" required>
+                        <span class="m-form__help testvalueHelp" style="color:red"></span>
+                    </div>
+                    <div class="form-group">
+                        <div class="loading text-center">
+                            <img src="~/img/spinner.gif" width="60"/>
+                            <h5>Sending Test Campaign</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="sendTest">Test Campaign</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+<script>
+
+    function format ( d ) {
+        return '<table class="table table-sm" cellpadding="5" cellspacing="0" border="0" style="padding-left:150px;" width="100%">'+
+            '<tr>'+
+                '<td>Start Date:</td>'+
+                '<td>'+d.StartDate+'</td>'+
+                '<td>End Date:</td>'+
+                '<td>'+d.EndDate+'</td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td>Last Run Time:</td>'+
+                '<td>'+d.LastRunTime+'</td>'+
+                '<td>Next Run Time:</td>'+
+                '<td>'+d.NextRunTime+'</td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td>Sender Name:</td>'+
+                '<td>'+d.SenderName+'</td>'+
+                '<td>Sender Email:</td>'+
+                '<td>'+d.SenderEmail+'</td>'+
+            '</tr>'+
+            '<tr>'+
+                '<td>Deactivated By:</td>'+
+                '<td>'+d.DeactivatedBy+'</td>'+
+                '<td>Date Deactivated:</td>'+
+                '<td>'+d.Datedeactivated+'</td>'+
+            '</tr>'+
+        '</table>';
+    }
+
+    var assetListVM;
+        $(function () {
+            assetListVM = {
+                dt: null,
+                init: function () {
+                    dt = $('#employer-data-table').DataTable({
+                        "serverSide": true,
+                        "language": {
+                                "processing": "<img src='../img/spinner.gif'>"
+                        },
+                        "processing": true,
+                        "StateSave": false,
+                        "ajax": {
+                            "type": 'GET',
+                            "url": "@Url.Action("GetCampaigns", "Campaign")",
+                        },
+                        "columns": [
+                            {
+                                "class": "details-control",
+                                "orderable": false,
+                                "data": null,
+                                "defaultContent": ""
+                            },
+                            {"data": "ID"},
+                            {"data": "CampaignName" },
+                            {"data": "EmailTitle" },
+                            {"data": "DateCreated" }
+                        ],
+                        "aoColumns": [
+                            {
+                                "class": "details-control",
+                                "orderable": false,
+                                "data": null,
+                                "defaultContent": ""
+                            },
+                            {"mData": "ID", sDefaultContent: ""},
+                            {"mData": "CampaignName", sDefaultContent: ""},
+                            {"mData": "EmailTitle", sDefaultContent: ""},
+                            {"mData": "DateCreated", sDefaultContent: ""},
+                            {}
+                        ],
+                        responsive: {
+                            details: {
+                                display: $.fn.dataTable.Responsive.display.modal( {
+                                    header: function ( row ) {
+                                        var data = row.data();
+                                        return 'Employer Details';
+                                    }
+                                } ),
+                                renderer: $.fn.dataTable.Responsive.renderer.tableAll( {
+                                    tableClass: 'table'
+                                } )
+                            }
+                        },
+                        columnDefs: [
+                            {
+                                "searchable": false,
+                                "orderable": false,
+                                "targets": -1
+                            },{
+                                "data": null,
+                                "defaultContent": "",
+                                "targets": -1
+                            },
+                            { targets : [5],
+                                mRender : function (data, type, row, meta) {
+                                    var url = '@Url.Action("Details", "Campaign")' + '?campaignId=' + row.ID;
+                                    //return '<a href="'+url+'" class="btn btn-info campaignBtn" data-id="'+row.ID+'" data-id="'+row.ListID+'" data-name="'+row.CampaignName+'" id="TestCampaign">Test</a>';
+                                    return '<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#m_modal_6" data-id="'+row.ID+'" data-listid="'+row.ListID+'" data-name="'+row.CampaignName+'" id="testCampaign">Test Campaign</button>';
+                                }
+                            },
+                            { targets : [6],
+                                mRender : function (data, type, row, meta) {
+                                    var url2 = '@Url.Action("StopCampaign", "Campaign")' + '?campaignId=' + row.ID;
+                                    if(row.Status == ""){
+                                        return '<a href="'+url2+'" class="btn btn-info campaignBtn" data-id="'+row.ID+'" data-name="'+row.CampaignName+'">Stop Campaign</a>';
+                                    }else if(row.Status == "Stopped"){
+                                        return '<button class="btn btn-info" data-id="'+row.ID+'" data-name="'+row.CampaignName+'">'+row.Status+'</button>';
+                                    }else{
+                                        return '<button class="btn btn-info" data-id="'+row.ID+'" data-name="'+row.CampaignName+'">'+row.Status+'</button>';
+                                    }
+                                }
+                            },
+                            { targets : [7],
+                                mRender : function (data, type, row, meta) {
+                                    var url = '@Url.Action("Details", "Campaign")' + '?campaignId=' + row.ID;
+                                    return '<a href="'+url+'" class="btn btn-info campaignBtn" data-id="'+row.ID+'" data-name="'+row.CampaignName+'" id="preview">Details</a>';
+                                }
+                            },
+
+                        ],
+                        "lengthMenu": [[25, 50, 100, 200], [25, 50, 100, 200]],
+                    });
+                }
+            }
+            // initialize the datatables
+            assetListVM.init();
+        });
+
+        var detailRows = [];
+
+        $('#employer-data-table tbody').on( 'click', 'tr td.details-control', function () {
+            var tr = $(this).closest('tr');
+            var row = dt.row( tr );
+            var idx = $.inArray( tr.attr('id'), detailRows );
+
+            if ( row.child.isShown() ) {
+                tr.removeClass( 'details' );
+                row.child.hide();
+
+                // Remove from the 'open' array
+                detailRows.splice( idx, 1 );
+            }
+            else {
+                tr.addClass( 'details' );
+                row.child( format( row.data() ) ).show();
+
+                // Add to the 'open' array
+                if ( idx === -1 ) {
+                    detailRows.push( tr.attr('id') );
+                }
+            }
+        });
+
+        // On each draw, loop over the `detailRows` array and show any child rows
+        /*dt.on( 'draw', function () {
+            $.each( detailRows, function ( i, id ) {
+                $('#'+id+' td.details-control').trigger( 'click' );
+            });
+        });*/
+
+        $(document).on("click", ".campaignBtn", function(){
+            var CampaignName = $(this).data("name");
+            localStorage.setItem("CampaignName", CampaignName)
+            var campaignId = $(this).data("id");
+            localStorage.setItem("campaignId", campaignId)
+        });
+
+
+    $(document).on("click", "#testCampaign", function(){
+
+        $("#listID5").empty().append($('<option>', { value: '', text: "Select Tag" }));
+        $("#listId").val("");
+        $("#campaignId").val("");
+        $('.modal-title').html("");
+        $('.responseMsg').html("");
+
+        var listId = $(this).data('listid');
+        var campaignId = $(this).data('id');
+        var campaignName = $(this).data('name');
+
+        $("#listId").val(listId);
+        $("#campaignId").val(campaignId);
+        $('.modal-title').html("Testing " + campaignName);
+
+        var headers = [];
+
+        console.log(listId);
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("GetListHeaders", "Lists")",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: {"id": listId},
+            success: function (data) {
+                $.each(data, function (index, item) {
+                    headers.push(item[0]);
+                    if(item[0].Listtype != ""){
+                        $('.responseMsg').html('<div class="alert alert-danger">Test cannot be carried out on an automated list</div>');
+                        $('#sendTest').attr('disabled', true);
+                    }else{
+                        $('#sendTest').attr('disabled', false);
+                    }
+                    if(item[0].H1 != ""){
+                        $('#listID5').append($('<option>', {
+                            value: 'H1',
+                            text: item[0].H1
+                        }));
+                    }
+                    if(item[0].H2 != ""){
+                        $('#listID5').append($('<option>', {
+                            value: 'H2',
+                            text: item[0].H2
+                        }));
+                    }
+                    if(item[0].H3 != ""){
+                        $('#listID5').append($('<option>', {
+                            value: 'H3',
+                            text: item[0].H3
+                        }));
+                    }
+                    if(item[0].H4 != ""){
+                        $('#listID5').append($('<option>', {
+                            value: 'H4',
+                            text: item[0].H4
+                        }));
+                    }
+                    if(item[0].H5 != ""){
+                        $('#listID5').append($('<option>', {
+                            value: 'H5',
+                            text: item[0].H5
+                        }));
+                    }
+                    if(item[0].H6 != ""){
+                        $('#listID5').append($('<option>', {
+                            value: 'H6',
+                            text: item[0].H6
+                        }));
+                    }
+                    if(item[0].H7 != ""){
+                        $('#listID5').append($('<option>', {
+                            value: 'H7',
+                            text: item[0].H7
+                        }));
+                    }
+                    if(item[0].H8 != ""){
+                        $('#listID5').append($('<option>', {
+                            value: 'H8',
+                            text: item[0].H8
+                        }));
+                    }
+                    if(item[0].H9 != ""){
+                        $('#listID5').append($('<option>', {
+                            value: 'H9',
+                            text: item[0].H9
+                        }));
+                    }
+                    if(item[0].H10 != ""){
+                        $('#listID5').append($('<option>', {
+                            value: 'H10',
+                            text: item[0].H10
+                        }));
+                    }
+                    if(item[0].H11 != ""){
+                        $('#listID5').append($('<option>', {
+                            value: 'H11',
+                            text: item[0].H11
+                        }));
+                    }
+                    if(item[0].H12 != ""){
+                        $('#listID5').append($('<option>', {
+                            value: 'H12',
+                            text: item[0].H12
+                        }));
+                    }
+                    if(item[0].H13 != ""){
+                        $('#listID5').append($('<option>', {
+                            value: 'H13',
+                            text: item[0].H13
+                        }));
+                    }
+                    if(item[0].H14 != ""){
+                        $('#listID5').append($('<option>', {
+                            value: 'H14',
+                            text: item[0].H14
+                        }));
+                    }
+                    if(item[0].H15 != ""){
+                        $('#listID5').append($('<option>', {
+                            value: 'H15',
+                            text: item[0].H15
+                        }));
+                    }
+                    if(item[0].H16 != ""){
+                        $('#listID5').append($('<option>', {
+                            value: 'H16',
+                            text: item[0].H16
+                        }));
+                    }
+                    if(item[0].H17 != ""){
+                        $('#listID5').append($('<option>', {
+                            value: 'H17',
+                            text: item[0].H17
+                        }));
+                    }
+                    if(item[0].H18 != ""){
+                        $('#listID5').append($('<option>', {
+                            value: 'H18',
+                            text: item[0].H18
+                        }));
+                    }
+                    if(item[0].H19 != ""){
+                        $('#listID5').append($('<option>', {
+                            value: 'H19',
+                            text: item[0].H19
+                        }));
+                    }
+                    if(item[0].H20 != ""){
+                        $('#listID5').append($('<option>', {
+                            value: 'H20',
+                            text: item[0].H20
+                        }));
+                    }
+                });
+            }
+        });
+    });
+
+    $(".loading").hide();
+    $(document).on("click", "#sendTest", function(){
+        $(this).attr("disable", true);
+        var params = $("#listID5").val();
+        var testvalue = $("#testvalue").val();
+
+        if(params == ""){
+            $('.paramsHelp').html("This field is required");
+            $('.testvalueHelp').html("");
+        }else if(testvalue == ""){
+            $('.testvalueHelp').html("This field is required");
+            $('.paramsHelp').html("");
+        }else{
+            $('.paramsHelp').html("");
+            $('.testvalueHelp').html("");
+            $.ajax({
+                type: "GET",
+                url: "@Url.Action("TestCampaign", "Campaign")",
+                contentType: "application/json; charset=utf-8",
+                data: $("#m_form1").serialize(),
+                dataType: "json",
+                beforeSend: function (){
+                    $(".loading").show();
+                },
+                success: function (data) {
+                    if(data.data == "01"){
+                        $('.responseMsg').html('<div class="alert alert-danger">'+data.msg+'</div>');
+                    }else{
+                        $('.responseMsg').html('<div class="alert alert-success">'+data.msg+'</div>')
+                    }
+                },
+                complete: function(){
+                    $(".loading").hide();
+                }
+            });
+        }
+    });
+    </script>

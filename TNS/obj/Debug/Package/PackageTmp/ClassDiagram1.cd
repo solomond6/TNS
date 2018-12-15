@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="TNS.BundleConfig" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\BundleConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.FilterConfig" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\FilterConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.RouteConfig" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.WebApiConfig" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\WebApiConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.MvcApplication" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.Controllers.CampaignController" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAQAgAAAABAAAAAAAAAAAAAAgAAEAQJAEAAAAAAIA=</HashCode>
+      <FileName>Controllers\CampaignController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.Controllers.HomeController" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEACAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.Controllers.ListsController" Collapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAgAAIAAAAAgAAAAAAEAQAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\ListsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.Controllers.LoginController" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAEAAAIAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\LoginController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.Controllers.ReportsController" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\ReportsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.Controllers.TemplatesController" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAACAAAEAAAEEAACAAAAA=</HashCode>
+      <FileName>Controllers\TemplatesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.Controllers.TinyMceController" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAABAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\TinyMceController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.Models.Campaign" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAACAAAEJACAgASwAgAAAAAkAAAAAAACAAgEAEAgAgk=</HashCode>
+      <FileName>Models\Campaign.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.Models.ContactLists" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAgAAAAAACAAAAAAAAAAAAAEAAAAAAAAE=</HashCode>
+      <FileName>Models\ContactLists.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.Models.ListHeader" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAQACAAAgAAAAAAAAoEAAAAAgAAgAAAAQAQQAAA=</HashCode>
+      <FileName>Models\ListHeader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.Models.Templates" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgEAAAAAAAAAAAAAAAAAAAEAAAABAAAE=</HashCode>
+      <FileName>Models\Templates.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.Properties.Settings" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.Utility.LogError" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAABA=</HashCode>
+      <FileName>Utility\LogError.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.Utility.LogWorker" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAACo=</HashCode>
+      <FileName>Utility\LogWorker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.Utility._Logger" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utility\LogWorker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.TNS.TNS" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>imGQQDQAAqHAAo4BQiBAyAIQoIAGbXADalCJYETCmCE=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.TNS.CreateHTMLTemplateCompletedEventArgs" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.TNS.StopCampaignCompletedEventArgs" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.TNS.FetchsendinglistCompletedEventArgs" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.TNS.FetchsendingHtmlCompletedEventArgs" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.TNS.FetchsendingdashboardCompletedEventArgs" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.TNS.FetchALLCampaignsCompletedEventArgs" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.TNS.FetchAllListCompletedEventArgs" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.TNS.FetchListByParamCompletedEventArgs" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.TNS.FetchtemplatesCompletedEventArgs" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.TNS.SendTestMailCompletedEventArgs" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.TNS.CreateListHeaderCompletedEventArgs" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.TNS.ADAuthCompletedEventArgs" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.TNS.CreateCampaignCompletedEventArgs" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.TNS.CreateListContentCompletedEventArgs" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.TNS.LogErrorCompletedEventArgs" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TNS.Models.Users" Collapsed="true">
+    <Position X="0.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Users.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Delegate Name="TNS.TNS.CreateHTMLTemplateCompletedEventHandler" Collapsed="true">
+    <Position X="4" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="TNS.TNS.StopCampaignCompletedEventHandler" Collapsed="true">
+    <Position X="0.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="TNS.TNS.FetchsendinglistCompletedEventHandler" Collapsed="true">
+    <Position X="5.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="TNS.TNS.FetchsendingHtmlCompletedEventHandler" Collapsed="true">
+    <Position X="4" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="TNS.TNS.FetchsendingdashboardCompletedEventHandler" Collapsed="true">
+    <Position X="2.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="TNS.TNS.FetchALLCampaignsCompletedEventHandler" Collapsed="true">
+    <Position X="9.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="TNS.TNS.FetchAllListCompletedEventHandler" Collapsed="true">
+    <Position X="11" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="TNS.TNS.FetchListByParamCompletedEventHandler" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="TNS.TNS.FetchtemplatesCompletedEventHandler" Collapsed="true">
+    <Position X="7.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="TNS.TNS.SendTestMailCompletedEventHandler" Collapsed="true">
+    <Position X="11" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="TNS.TNS.CreateListHeaderCompletedEventHandler" Collapsed="true">
+    <Position X="7.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="TNS.TNS.ADAuthCompletedEventHandler" Collapsed="true">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="TNS.TNS.CreateCampaignCompletedEventHandler" Collapsed="true">
+    <Position X="2.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="TNS.TNS.CreateListContentCompletedEventHandler" Collapsed="true">
+    <Position X="5.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="TNS.TNS.LogErrorCompletedEventHandler" Collapsed="true">
+    <Position X="9.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\TNS\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

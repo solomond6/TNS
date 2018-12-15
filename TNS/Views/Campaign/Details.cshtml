@@ -1,0 +1,259 @@
+﻿<div class="m-grid__item m-grid__item--fluid m-wrapper">
+    <!-- BEGIN: Subheader -->
+    <div class="m-subheader ">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h3 class="m-subheader__title ">
+                    
+                </h3>
+            </div>
+            <div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="m-content">
+        <div class="m-portlet ">
+            <div class="m-portlet__body  m-portlet__body--no-padding">
+                <div class="row m-row--no-padding m-row--col-separator-xl">
+                    <div class="col-md-12 col-lg-6 col-xl-4">
+                        <!--begin::Total Profit-->
+                        <div class="m-widget24">
+                            <div class="m-widget24__item">
+                                <h4 class="m-widget24__title">
+                                    Successful
+                                </h4><br>
+                                <span class="m-widget24__desc">
+                                    Count of Successfuly Sent Emails
+                                </span>
+                                <span class="m-widget24__stats m--font-success">
+
+                                </span>
+                                <div class="m--space-10"></div>
+                                <div class="progress m-progress--sm">
+                                    <div class="progress-bar m--bg-success" role="progressbar" style="width: 100%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <!--end::Total Profit-->
+                    </div>
+                    <div class="col-md-12 col-lg-6 col-xl-4">
+                        <!--begin::New Feedbacks-->
+                        <div class="m-widget24">
+                            <div class="m-widget24__item">
+                                <h4 class="m-widget24__title">
+                                    Outstanding
+                                </h4><br>
+                                <span class="m-widget24__desc">
+                                    Count Of Outstanding
+                                </span>
+                                <span class="m-widget24__stats m--font-info">
+                                    
+                                </span>
+                                <div class="m--space-10"></div>
+                                <div class="progress m-progress--sm">
+                                    <div class="progress-bar m--bg-info" role="progressbar" style="width: 100%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end::New Feedbacks-->
+                    </div>
+                    <div class="col-md-12 col-lg-6 col-xl-4">
+                        <!--begin::New Orders-->
+                        <div class="m-widget24">
+                            <div class="m-widget24__item">
+                                <h4 class="m-widget24__title">
+                                    Error
+                                </h4><br>
+                                <span class="m-widget24__desc">
+                                    Count Emails with Errors
+                                </span>
+                                <span class="m-widget24__stats m--font-danger">
+                                    
+                                </span>
+                                <div class="m--space-10"></div>
+                                <div class="progress m-progress--sm">
+                                    <div class="progress-bar m--bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end::New Orders-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @if (TempData["Msg"] != null)
+        {
+            <alert class="alert alert-success">@TempData["Msg"]</alert>
+        }
+        @if (TempData["Error"] != null)
+        {
+            <alert class="alert alert-danger">@TempData["Error"]</alert>
+        }
+        
+        <div class="m_datatable m-datatable m-datatable--default m-datatable--loaded">
+            <table id="employer-data-table" class="datatable__table table table-striped" width="100%">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Recipient</th>
+                        <th>SMTP Response</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade modal-fullscreen footer-to-bottom" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog animated" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLabel"></h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="contentPreview"></div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+<script src="~/Scripts/charts.loader.js"></script>
+
+<script>
+
+        var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? true : sParameterName[1];
+            }
+        }
+    };
+
+    var campaignId = getUrlParameter('campaignId');
+
+    var assetListVM;
+        $(function () {
+            assetListVM = {
+                dt: null,
+                init: function () {
+                    dt = $('#employer-data-table').DataTable({
+                        "serverSide": true,
+                        "language": {
+                                "processing": "<img src='../img/spinner.gif'>"
+                        },
+                        "processing": true,
+                        "StateSave": false,
+                        "ajax": {
+                            "type": 'GET',
+                            "url": "@Url.Action("GetCampaignSendDetails", "Campaign")",
+                            "data": {campaignId: campaignId}
+                        },
+                        "columns": [
+                            {"data": "ID"},
+                            {"data": "Recipient" },
+                            {"data": "SMTPResp" },
+                            {}
+                        ],
+                        "aoColumns": [
+                            {"mData": "ID", sDefaultContent: ""},
+                            {"mData": "Recipient", sDefaultContent: ""},
+                            {"mData": "SMTPResp", sDefaultContent: ""},
+                            {}
+                        ],
+                        responsive: {
+                            details: {
+                                display: $.fn.dataTable.Responsive.display.modal( {
+                                    header: function ( row ) {
+                                        var data = row.data();
+                                        return 'Employer Details';
+                                    }
+                                } ),
+                                renderer: $.fn.dataTable.Responsive.renderer.tableAll( {
+                                    tableClass: 'table'
+                                } )
+                            }
+                        },
+                        columnDefs: [
+                            {
+                                "searchable": false,
+                                "orderable": false,
+                                "targets": -1
+                            },{
+                                "data": null,
+                                "defaultContent": "",
+                                "targets": -1
+                            },
+                            { targets : [3],
+                                mRender : function (data, type, row, meta) {
+                                    return '<a class="btn btn-info" data-toggle="modal" data-id="'+row.ID+'" data-email="'+row.Recipient+'" data-target="#exampleModal" id="preview">View Message</a> ';
+                                }
+                            }
+                        ],
+                        "lengthMenu": [[25, 50, 100, 200], [25, 50, 100, 200]],
+                    });
+                }
+            }
+            // initialize the datatables
+            assetListVM.init();
+        });
+
+    $(".m-subheader__title").html(localStorage.CampaignName +' Campaign Details');
+
+    google.charts.load('current', {'packages':['corechart', 'bar']});
+
+    $.ajax({
+      type: 'GET',
+      dataType: 'json',
+      contentType: 'application/json',
+      url: "@Url.Action("GetCampaignStatus", "Campaign")",
+      data: {'campaignId': campaignId},
+      success: function (response)
+      {
+    console.log(response);
+            $('.m--font-danger').html(response.data[0].Error);
+            $('.m--font-info').html(response.data[0].Outstanding);
+            $('.m--font-success').html(response.data[0].Successful);
+      },
+      error: function ()
+      {
+         alert("Error loading data! Please try again.");
+      }
+    });
+
+
+    $(document).on('click', '#preview', function(){
+        var recipientId = $(this).data('id');
+        var recipientEmail = $(this).data('email');
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("GetRecipientMessage", "Campaign")",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: {'recipientId': recipientId },
+            success: function (data) {
+                $.each(data, function (index, item) {
+                    requestData = item;
+                    jQuery.grep(item, function(template, i) {
+                         $(".modal-title").html(recipientEmail)
+                         $(".contentPreview").html(template.Contents)
+                    });
+                });
+            }
+        });
+    });
+    </script>

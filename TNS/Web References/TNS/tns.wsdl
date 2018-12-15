@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CreateHTMLTemplate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="template" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="createdby" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateHTMLTemplateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateHTMLTemplateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StopCampaign">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CampaignID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DeactivatedBy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StopCampaignResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StopCampaignResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Fetchsendinglist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CampaignID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchsendinglistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchsendinglistResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchsendingHtml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SenderID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchsendingHtmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchsendingHtmlResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Fetchsendingdashboard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CampaignID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchsendingdashboardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchsendingdashboardResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchALLCampaigns">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="src" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchALLCampaignsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchALLCampaignsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchAllList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="src" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchAllListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchAllListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchListByParam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="src" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchListByParamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchListByParamResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Fetchtemplates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="src" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchtemplatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchtemplatesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendTestMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CampaignID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="searchparam" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="searchparamvalue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="src" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendTestMailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendTestMailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateListHeader">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Uploadedby" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="listname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H6" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H7" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H8" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H9" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H10" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H11" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H12" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H13" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H14" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H15" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H16" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H17" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H18" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H19" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H20" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateListHeaderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateListHeaderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ADAuth">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SapID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BrowserUsed" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ipaddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="windowsuser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ADAuthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ADAuthResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateCampaign">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Uploadedby" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ParamiterizedTemplate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ListID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CampaignName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SenderEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Recipient" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Attachment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Bcc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cycle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deliverytype" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="campaigntype" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateCampaignResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateCampaignResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateListContent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Uploadedby" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="listID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H6" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H7" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H8" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H9" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H10" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H11" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H12" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H13" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H14" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H15" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H16" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H17" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H18" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H19" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="H20" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateListContentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateListContentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogError">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecordID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecordID2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecordID3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Section" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Section2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Section3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Verbose" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogErrorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateHTMLTemplateSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateHTMLTemplate" />
+  </wsdl:message>
+  <wsdl:message name="CreateHTMLTemplateSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateHTMLTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="StopCampaignSoapIn">
+    <wsdl:part name="parameters" element="tns:StopCampaign" />
+  </wsdl:message>
+  <wsdl:message name="StopCampaignSoapOut">
+    <wsdl:part name="parameters" element="tns:StopCampaignResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchsendinglistSoapIn">
+    <wsdl:part name="parameters" element="tns:Fetchsendinglist" />
+  </wsdl:message>
+  <wsdl:message name="FetchsendinglistSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchsendinglistResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchsendingHtmlSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchsendingHtml" />
+  </wsdl:message>
+  <wsdl:message name="FetchsendingHtmlSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchsendingHtmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchsendingdashboardSoapIn">
+    <wsdl:part name="parameters" element="tns:Fetchsendingdashboard" />
+  </wsdl:message>
+  <wsdl:message name="FetchsendingdashboardSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchsendingdashboardResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchALLCampaignsSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchALLCampaigns" />
+  </wsdl:message>
+  <wsdl:message name="FetchALLCampaignsSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchALLCampaignsResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchAllListSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchAllList" />
+  </wsdl:message>
+  <wsdl:message name="FetchAllListSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchAllListResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchListByParamSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchListByParam" />
+  </wsdl:message>
+  <wsdl:message name="FetchListByParamSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchListByParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchtemplatesSoapIn">
+    <wsdl:part name="parameters" element="tns:Fetchtemplates" />
+  </wsdl:message>
+  <wsdl:message name="FetchtemplatesSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchtemplatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendTestMailSoapIn">
+    <wsdl:part name="parameters" element="tns:SendTestMail" />
+  </wsdl:message>
+  <wsdl:message name="SendTestMailSoapOut">
+    <wsdl:part name="parameters" element="tns:SendTestMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchListSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchList" />
+  </wsdl:message>
+  <wsdl:message name="FetchListSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchListResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateListHeaderSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateListHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateListHeaderSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateListHeaderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ADAuthSoapIn">
+    <wsdl:part name="parameters" element="tns:ADAuth" />
+  </wsdl:message>
+  <wsdl:message name="ADAuthSoapOut">
+    <wsdl:part name="parameters" element="tns:ADAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateCampaignSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateCampaign" />
+  </wsdl:message>
+  <wsdl:message name="CreateCampaignSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateCampaignResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateListContentSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateListContent" />
+  </wsdl:message>
+  <wsdl:message name="CreateListContentSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateListContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:LogError" />
+  </wsdl:message>
+  <wsdl:message name="LogErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:LogErrorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TNSSoap">
+    <wsdl:operation name="CreateHTMLTemplate">
+      <wsdl:input message="tns:CreateHTMLTemplateSoapIn" />
+      <wsdl:output message="tns:CreateHTMLTemplateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StopCampaign">
+      <wsdl:input message="tns:StopCampaignSoapIn" />
+      <wsdl:output message="tns:StopCampaignSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Fetchsendinglist">
+      <wsdl:input message="tns:FetchsendinglistSoapIn" />
+      <wsdl:output message="tns:FetchsendinglistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchsendingHtml">
+      <wsdl:input message="tns:FetchsendingHtmlSoapIn" />
+      <wsdl:output message="tns:FetchsendingHtmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Fetchsendingdashboard">
+      <wsdl:input message="tns:FetchsendingdashboardSoapIn" />
+      <wsdl:output message="tns:FetchsendingdashboardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchALLCampaigns">
+      <wsdl:input message="tns:FetchALLCampaignsSoapIn" />
+      <wsdl:output message="tns:FetchALLCampaignsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchAllList">
+      <wsdl:input message="tns:FetchAllListSoapIn" />
+      <wsdl:output message="tns:FetchAllListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchListByParam">
+      <wsdl:input message="tns:FetchListByParamSoapIn" />
+      <wsdl:output message="tns:FetchListByParamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Fetchtemplates">
+      <wsdl:input message="tns:FetchtemplatesSoapIn" />
+      <wsdl:output message="tns:FetchtemplatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendTestMail">
+      <wsdl:input message="tns:SendTestMailSoapIn" />
+      <wsdl:output message="tns:SendTestMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchList">
+      <wsdl:input message="tns:FetchListSoapIn" />
+      <wsdl:output message="tns:FetchListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateListHeader">
+      <wsdl:input message="tns:CreateListHeaderSoapIn" />
+      <wsdl:output message="tns:CreateListHeaderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ADAuth">
+      <wsdl:input message="tns:ADAuthSoapIn" />
+      <wsdl:output message="tns:ADAuthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCampaign">
+      <wsdl:input message="tns:CreateCampaignSoapIn" />
+      <wsdl:output message="tns:CreateCampaignSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateListContent">
+      <wsdl:input message="tns:CreateListContentSoapIn" />
+      <wsdl:output message="tns:CreateListContentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogError">
+      <wsdl:input message="tns:LogErrorSoapIn" />
+      <wsdl:output message="tns:LogErrorSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TNSSoap" type="tns:TNSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateHTMLTemplate">
+      <soap:operation soapAction="http://tempuri.org/CreateHTMLTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopCampaign">
+      <soap:operation soapAction="http://tempuri.org/StopCampaign" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fetchsendinglist">
+      <soap:operation soapAction="http://tempuri.org/Fetchsendinglist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchsendingHtml">
+      <soap:operation soapAction="http://tempuri.org/FetchsendingHtml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fetchsendingdashboard">
+      <soap:operation soapAction="http://tempuri.org/Fetchsendingdashboard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchALLCampaigns">
+      <soap:operation soapAction="http://tempuri.org/FetchALLCampaigns" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchAllList">
+      <soap:operation soapAction="http://tempuri.org/FetchAllList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchListByParam">
+      <soap:operation soapAction="http://tempuri.org/FetchListByParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fetchtemplates">
+      <soap:operation soapAction="http://tempuri.org/Fetchtemplates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendTestMail">
+      <soap:operation soapAction="http://tempuri.org/SendTestMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchList">
+      <soap:operation soapAction="http://tempuri.org/FetchList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateListHeader">
+      <soap:operation soapAction="http://tempuri.org/CreateListHeader" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ADAuth">
+      <soap:operation soapAction="http://tempuri.org/ADAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCampaign">
+      <soap:operation soapAction="http://tempuri.org/CreateCampaign" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateListContent">
+      <soap:operation soapAction="http://tempuri.org/CreateListContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogError">
+      <soap:operation soapAction="http://tempuri.org/LogError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TNSSoap12" type="tns:TNSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateHTMLTemplate">
+      <soap12:operation soapAction="http://tempuri.org/CreateHTMLTemplate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopCampaign">
+      <soap12:operation soapAction="http://tempuri.org/StopCampaign" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fetchsendinglist">
+      <soap12:operation soapAction="http://tempuri.org/Fetchsendinglist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchsendingHtml">
+      <soap12:operation soapAction="http://tempuri.org/FetchsendingHtml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fetchsendingdashboard">
+      <soap12:operation soapAction="http://tempuri.org/Fetchsendingdashboard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchALLCampaigns">
+      <soap12:operation soapAction="http://tempuri.org/FetchALLCampaigns" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchAllList">
+      <soap12:operation soapAction="http://tempuri.org/FetchAllList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchListByParam">
+      <soap12:operation soapAction="http://tempuri.org/FetchListByParam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fetchtemplates">
+      <soap12:operation soapAction="http://tempuri.org/Fetchtemplates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendTestMail">
+      <soap12:operation soapAction="http://tempuri.org/SendTestMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchList">
+      <soap12:operation soapAction="http://tempuri.org/FetchList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateListHeader">
+      <soap12:operation soapAction="http://tempuri.org/CreateListHeader" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ADAuth">
+      <soap12:operation soapAction="http://tempuri.org/ADAuth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCampaign">
+      <soap12:operation soapAction="http://tempuri.org/CreateCampaign" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateListContent">
+      <soap12:operation soapAction="http://tempuri.org/CreateListContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogError">
+      <soap12:operation soapAction="http://tempuri.org/LogError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TNS">
+    <wsdl:port name="TNSSoap" binding="tns:TNSSoap">
+      <soap:address location="http://10.234.148.145/Wealthbox/SIPML/tns.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TNSSoap12" binding="tns:TNSSoap12">
+      <soap12:address location="http://10.234.148.145/Wealthbox/SIPML/tns.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

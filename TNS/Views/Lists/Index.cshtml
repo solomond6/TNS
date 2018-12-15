@@ -1,0 +1,190 @@
+﻿
+<div class="m-grid__item m-grid__item--fluid  m-grid m-grid--ver-desktop m-grid--desktop">
+    <!-- BEGIN: Left Aside -->
+    <button class="m-aside-left-close m-aside-left-close--skin-light" id="m_aside_left_close_btn">
+        <i class="la la-close"></i>
+    </button>
+    <!-- END: Left Aside -->
+    <div class="m-grid__item m-grid__item--fluid m-wrapper">
+        <!-- BEGIN: Subheader -->
+        <div class="m-subheader ">
+            <div class="d-flex align-items-center">
+                <div class="mr-auto">
+                    <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+                        <li class="m-nav__item m-nav__item--home">
+                            <a href="#" class="m-nav__link m-nav__link--icon">
+                                <i class="m-nav__link-icon la la-home"></i>
+                            </a>
+                        </li>
+                        <li class="m-nav__separator">
+                            -
+                        </li>
+                        <li class="m-nav__item">
+                            <a href="" class="m-nav__link">
+                                <span class="m-nav__link-text">
+                                    Actions
+                                </span>
+                            </a>
+                        </li>
+                        <li class="m-nav__separator">
+                            -
+                        </li>
+                        <li class="m-nav__item">
+                            <a href="" class="m-nav__link">
+                                <span class="m-nav__link-text">
+                                    List
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END: Subheader -->
+        <div class="m-content">
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption" style="display: inline-block;">
+                    <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text">
+                            Lists
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <hr />
+            @if (TempData["MessageError"] != null)
+            {
+                <alert class="alert alert-danger">@TempData["MessageError"]</alert>
+            }
+            @if (TempData["MessageSuccess"] != null)
+            {
+                <alert class="alert alert-success">@TempData["MessageSuccess"]</alert>
+            }
+            <div class="m_datatable m-datatable m-datatable--default m-datatable--loaded">
+                <table id="employer-data-table" class="datatable__table table table-striped" width="100%">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Date Created</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLabel"></h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="contentPreview"></div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+
+<script>
+    var assetListVM;
+        $(function () {
+            assetListVM = {
+                dt: null,
+                init: function () {
+                    dt = $('#employer-data-table').DataTable({
+                        "serverSide": true,
+                        "language": {
+                                "processing": "<img src='./img/spinner.gif'>"
+                        },
+                        "processing": true,
+                        "StateSave": false,
+                        "ajax": {
+                            "type": 'GET',
+                            "url": "@Url.Action("GetLists", "Lists")",
+                            //"data": {EmployerID: EmployerID}
+                        },
+                        "columns": [
+                            {"data": "ID"},
+                            {"data": "Listname" },
+                            {"data": "Datecreated" },
+                        ],
+                        "aoColumns": [
+                            {"mData": "ID", sDefaultContent: ""},
+                            {"mData": "Listname", sDefaultContent: ""},
+                            {"mData": "Datecreated", sDefaultContent: ""},
+                        ],
+                        responsive: {
+                            details: {
+                                display: $.fn.dataTable.Responsive.display.modal( {
+                                    header: function ( row ) {
+                                        var data = row.data();
+                                        return 'Employer Details';
+                                    }
+                                } ),
+                                renderer: $.fn.dataTable.Responsive.renderer.tableAll( {
+                                    tableClass: 'table'
+                                } )
+                            }
+                        },
+                        columnDefs: [
+                            {
+                                "searchable": false,
+                                "orderable": false,
+                                "targets": -1
+                            },{
+                                "data": null,
+                                "defaultContent": "",
+                                "targets": -1
+                            },
+                            { targets : [3],
+                                mRender : function (data, type, row, meta) {
+                                    var url = '@Url.Action("Details", "Lists")' + '?Id=' + row.ID;
+                                    return '<a href="'+url+'" class="btn btn-info ListBtn" data-id="'+row.ID+'" data-name="'+row.Listname+'" data-dateCreated="'+row.Datecreated+'" id="preview">View List Details</a>';
+                                }
+                            }
+                        ],
+                        "lengthMenu": [[10, 25, 50, 100], [10, 25, 50, 100]],
+                    });
+                }
+            }
+            // initialize the datatables
+            assetListVM.init();
+        });
+
+    $(document).on('click', '#preview', function(){
+        var templateId = $(this).data('id');
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("GetTemplatePreview", "Templates")",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: {'templateid': templateId },
+            success: function (data) {
+                $.each(data, function (index, item) {
+                    requestData = item;
+                    jQuery.grep(item, function(template, i) {
+                         $(".modal-title").html(template.Title)
+                         $(".contentPreview").html(template.Contents)
+                    });
+                });
+            }
+        });
+    });
+
+    $(document).on("click", ".ListBtn", function(){
+        var ListName = $(this).data("name");
+        localStorage.setItem("ListName", ListName)
+        var dateCreated = $(this).data("dateCreated");
+        localStorage.setItem("dateCreated", dateCreated)
+    });
+
+</script>

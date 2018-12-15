@@ -1,0 +1,10 @@
+id: TNS
+language: CSharp
+name:
+  Default: TNS
+qualifiedName:
+  Default: TNS
+type: Assembly
+modifiers: {}
+items: []
+references: {}
